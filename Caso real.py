@@ -98,8 +98,6 @@ res5, tiempo5, mem5 = medir(caso5_exponencial)
 
 # --- Resultados ---
 
-print("Resultados de análisis algorítmico:\n")
-
 print(f"Caso 1 (Constante O(1))       - Tiempo: {tiempo1:.8f}s - Memoria: {mem1:.4f} MB")
 print(f"Caso 2 (Lineal O(n))          - Tiempo: {tiempo2:.8f}s - Memoria: {mem2:.4f} MB")
 print(f"Caso 3 (Cuadrática O(n²))     - Tiempo: {tiempo3:.8f}s - Memoria: {mem3:.4f} MB")

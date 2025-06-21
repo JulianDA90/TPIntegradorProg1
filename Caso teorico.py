@@ -1,3 +1,4 @@
+#Modulos
 import time
 import psutil
 import os
@@ -6,44 +7,6 @@ import os
 def memoria_actual():
     process = psutil.Process(os.getpid())
     return process.memory_info().rss / 1024**2
-
-# --- Funciones para cada caso de complejidad ---
-
-def constante(lista):
-    return lista[0]
-
-def lineal(lista):
-    total = 0
-    for x in lista:
-        total += x
-    return total
-
-def cuadratica(lista):
-    contador = 0
-    for i in lista:
-        for j in lista:
-            contador += 1
-    return contador
-
-#Para funcion logaritmica
-def busqueda_binaria(lista, objetivo):
-    inicio = 0
-    fin = len(lista) - 1
-    while inicio <= fin:
-        medio = (inicio + fin) // 2
-        if lista[medio] == objetivo:
-            return medio
-        elif lista[medio] < objetivo:
-            inicio = medio + 1
-        else:
-            fin = medio - 1
-    return -1
-
-#Para funcion exponencial
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
 
 # Función para medir tiempo y memoria usando psutil
 def medir(func, *args, **kwargs):
@@ -59,6 +22,46 @@ def medir(func, *args, **kwargs):
     memoria = mem_fin - mem_inicio  # Memoria consumida en MB
 
     return resultado, tiempo, memoria
+
+# --- Funciones para cada caso de complejidad ---
+#Caso 1
+def constante(lista):
+    return lista[0]
+
+#Caso 2
+def lineal(lista):
+    total = 0
+    for x in lista:
+        total += x
+    return total
+
+#Caso 3
+def cuadratica(lista):
+    contador = 0
+    for i in lista:
+        for j in lista:
+            contador += 1
+    return contador
+
+#Caso 4
+def busqueda_binaria(lista, objetivo):
+    inicio = 0
+    fin = len(lista) - 1
+    while inicio <= fin:
+        medio = (inicio + fin) // 2
+        if lista[medio] == objetivo:
+            return medio
+        elif lista[medio] < objetivo:
+            inicio = medio + 1
+        else:
+            fin = medio - 1
+    return -1
+
+#Caso 5
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
 
 # --- Ejecutar y medir ---
 
